@@ -1,0 +1,31 @@
+{
+  "name": "virtual-dom",
+  "version": "0.0.1",
+  "description": "Simple virtual dom",
+  "keywords": [
+    "virtual",
+    "dom",
+    "vdom"
+  ],
+  "author": "chen tao <dwchentao@163.com>",
+  "repository": "git://github.com/imtaotao/virtualDom.git",
+  "main": "index",
+  "homepage": "https://github.com/imtaotao/virtualDom",
+  "contributors": [
+    {
+      "name": "taotao"
+    }
+  ],
+  "dependencies": {
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "tap-spec": "^3.0.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server"
+  }
+}
