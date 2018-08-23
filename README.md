@@ -3,7 +3,7 @@
 
 ## api
 `h` 用于创建虚拟dom
-+ `h (tagName: string, props?: array, children?: vnode|string|number[]) : vnode`
++ `h (tagName: string, props?: object, children?: vnode|string|number[]) : vnode`
 <br/>
 
 `diff` 用于比对新旧 vtree
