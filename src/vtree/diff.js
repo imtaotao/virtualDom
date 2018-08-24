@@ -38,7 +38,7 @@ function walk (a, b, patch, index) {
     } else {
       // a 有可能是 vnode、text 和 widget
       applyClear = true
-      apply = appendPatch(apply, new VPatch(VPatch.vNode, a, b))
+      apply = appendPatch(apply, new VPatch(VPatch.VNode, a, b))
     }
   } else if (isVText(b)) {
     if (!isVText(a)) {
@@ -72,7 +72,7 @@ function destroyWidgets (vNode, patch, index) {
     // 我们对 widget 节点进行 patch 主要是为了调用 destroy
     // 不然我们在直接替换节点的时候就把这个 widget 直接删掉了都不用管
     if (typeof vNode.destroy === 'function') {
-      patch[index] = new VPatch(VPatch.REMOVE, vNode, null)
+      patch[index] = appendPatch(patch[index], new VPatch(VPatch.REMOVE, vNode, null))
     }
   } else if (isVNode(vNode) && vNode.hasWidgets) {
     const children = vNode.children
