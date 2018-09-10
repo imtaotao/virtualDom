@@ -54,11 +54,13 @@ function stringPatch (domNode, vText, renderOptions) {
     domNode.replaceData(0, domNode.length, vText.text)
     return domNode
   }
-
+  
   const parentNode = domNode.parentNode
   const newNode = renderOptions.render(vText)
-
-  parentNode.replaceChild(domNode, newNode)
+  
+  if (parentNode && newNode !== domNode) {
+    parentNode.replaceChild(newNode, domNode)
+  }
 
   return newNode
 }

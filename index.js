@@ -16,8 +16,8 @@ function render(count)  {
 // 2: Initialise the document
 let count = 0     // We need some app data. Here we just store a count.
 
-const tree = render(count)         // We need an initial tree
-const rootNode = create(tree)     // Create an initial root DOM node ...
+let tree = render(count)         // We need an initial tree
+let rootNode = create(tree)     // Create an initial root DOM node ...
 document.body.appendChild(rootNode)    // ... and it should be in the document
 
 // 3: Wire up the update logic
