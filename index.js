@@ -1,4 +1,4 @@
-import v, { h, diff, patch, create } from './src'
+import { h, diff, patch, create } from './src'
 
 // 1: Create a function that declares what the DOM should look like
 function render(count)  {
@@ -10,13 +10,14 @@ function render(count)  {
       width: (100 + count) + 'px',
       height: (100 + count) + 'px',
     }
-  }, [String(count)])
+  }, [String(count), h('p', {id: 'tao'}, [100])])
 }
 
 // 2: Initialise the document
 let count = 0     // We need some app data. Here we just store a count.
 
 let tree = render(count)         // We need an initial tree
+console.log(tree);
 let rootNode = create(tree)     // Create an initial root DOM node ...
 document.body.appendChild(rootNode)    // ... and it should be in the document
 
